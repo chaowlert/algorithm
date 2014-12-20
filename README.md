@@ -1,92 +1,72 @@
-! Project Description
-{project:description}
+# Project Description
+This is my collection of algorithms. Migrate from CodePlex
 
-! Features
-*1. Extend your .NET language*
-*[Chaow.Extensions]* contains several extensions for array, list, date, int, string and more.
+# Features
+#####1. Extend your .NET language
+**[Chaow.Extensions]** contains several extensions for array, list, date, int, string and more.
 You can use the extensions to make you code easier.
 
-{code:c#}
+```
 var matchQuery = new {
     BirthDate = 1.January(2000),    //Create date easily
     Iam = Sex.Man,
     LookingFor = Array.Enum<Sex>(), //Looking for Man, and Woman! (Expand enum)
     AgeRange = 18.To(25)            //Create number range
 }
-{code:c#}
+```
 You will also be able to write Functional Programming and Dynamic Programming.
 
-{code:c#}
+```
 Func<int, int> fibo = null;
 fibo = x => fibo(x - 1) + fibo(x - 2);
 fibo = fibo.When(x => x <= 1, x => x); //Able to do pattern matching
 fibo = fibo.Memoize();                 //Allow you to do memoization
 var result = fibo(38);
-{code:c#}
+```
 
-*2. Set of based class libraries*
-With *[Chaow.Numeric]*, you will get several new based classes for using in your code.
-Feature classes are BigInteger, Prime, and much more.
+#####2. Set of based class libraries
+With **[Chaow.Numeric]**, you will get several new based classes for using in your code.
 
-{code:c#}
-BigInteger a = 2;
-var result = a.Power(1000);      //2^1000 value is more than 300 digits of number, but BigInteger has no boundary
-{code:c#}
-{code:c#}
+```
 var prime = new Prime();
 var isPrime = prime.Contains(142857); //Test for prime number
 var primeList = prime.Take(10000);    //Generate prime numbers
-{code:c#}
+```
 
-*3. Solve polynomial problems*
-You can easily analyze your math functions with *[Chaow.Numeric 2]*.
+#####3. Solve polynomial problems
+You can easily analyze your math functions with **[Chaow.Numeric 2]**.
 
 ie. Solve integer of X, Y in {"3XX + 14XY + 6YY - 17X - 23Y - 505 = 0"}
-{code:c#}
+```
 var solutions = Diophantine.Parse((x, y) => 3 * x * x + 14 * x * y + 6 * y * y - 17 * x - 23 * y - 505).Solutions;
 var x = solutions[0].X0;
 var y = solutions[0].Y0;
-{code:c#}
+```
 ie2. Find formula from sequence of numbers
-{code:c#}
+```
 var formula = MathExt2.PolynomialInterpolation(new Rational[] { 1, 8, 27, 64 });
 Console.WriteLine(formula.Rewrite());
 //Output is x => x.Power(3)
-{code:c#}
+```
 
-*4. Solve nonpolynomial problems*
-*[Chaow.Combinatorics]* will allow you to backtrack with any types of problem.
+####4. Solve nonpolynomial problems
+**[Chaow.Combinatorics]** will allow you to backtrack with any types of problem.
 
 ie. Solve 8 Queens easily, with few lines of code.
-{code:c#}
+```
 var solutions = "ABCDEFGH".Backtrack(8);
 solutions.BacktrackingModel = BacktrackingModel.Permutation;
 solutions.AppendConstraint(set => q =>
     set.All((x, i) => (set.Length - i != (x - q).Abs()))
 );
 var answer = solutions.First();
-{code:c#}
-Have more than 1 CPU? You can do concurrent backtracking easily.
+```
 
-ie2. Create concurrent Sudoku solver with few lines of code.
-{code:c#}
-//Just add AsConcurrent to transform normal enumeration into concurrent enumeration.
-var solutions = 1.To(9).AsConcurrent().Backtrack(
-    valued,
-    (set, cell, i) => set.Append(cell),
-    set => set.Length == 81);
-
-solutions.AppendConstraint(
-    set => cell => !set.Any((x, i) => x == cell && Sudoku.hasImpact(position[i], position[set.Length]))
-);
-
-var answer = solutions.SelectResults().First();
-{code:c#}
 Finally, may I introduce new language LINCON (Language INtegrated CONstraint programming).
 LINCON is strong type constraint programming, which fast, declarative style and fun!
 
 ie3. Solving Einstein's puzzle with LINCON!
-{code:c#}
+```
 var solutions = from n in ArrayExt.Enum<Nationality>().ToConstraintList(5)
                 from c in ArrayExt.Enum<HouseColor>().ToConstraintList(5)
                 from s in ArrayExt.Enum<Smoke>().ToConstraintList(5)
@@ -127,10 +107,12 @@ var solutions = from n in ArrayExt.Enum<Nationality>().ToConstraintList(5)
                         Pet = p[x]
                     });
 var answer = solutions.First();
-{code:c#}
+```
 
-! Modules
-|| module || description ||
+# Modules
+
+| module | description |
+|-|-|
 | Chaow.Algorithms | provides data type to solve specific problems ie. binary indexed tree disjoint set, hungarian algorithm |
 | Chaow.Combinatorics | enables you to do combinatoric search easier ie. combination, permutation, partition |
 | Chaow.Expression | enhances the power of expression ie. exp matcher, exp replacer, exp rewriter |
@@ -139,5 +121,5 @@ var answer = solutions.First();
 | Chaow.Numeric | provides various high performance numeric types ie. prime, biginteger, rational |
 | Chaow.Numeric 2 | allows you to do mathematical analysis ie. diophantine solver, polynomial rewriter |
 
-! Links
-- [url:my blog|http://chaowman.bloggang.com] (Thai language)
+# Links
+- [My blog](http://chaowman.bloggang.com) (Thai language)
