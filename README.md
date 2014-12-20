@@ -2,8 +2,8 @@
 This is my collection of algorithms. Migrate from CodePlex
 
 # Features
-#####1. Extend your .NET language
-**[Chaow.Extensions]** contains several extensions for array, list, date, int, string and more.
+####1. Extend your .NET language
+`Chaow.Extensions` contains several extensions for array, list, date, int, string and more.
 You can use the extensions to make you code easier.
 
 ```
@@ -24,8 +24,9 @@ fibo = fibo.Memoize();                 //Allow you to do memoization
 var result = fibo(38);
 ```
 
-#####2. Set of based class libraries
-With **[Chaow.Numeric]**, you will get several new based classes for using in your code.
+---
+####2. Set of based class libraries
+With `Chaow.Numeric`, you will get several new based classes for using in your code.
 
 ```
 var prime = new Prime();
@@ -33,8 +34,9 @@ var isPrime = prime.Contains(142857); //Test for prime number
 var primeList = prime.Take(10000);    //Generate prime numbers
 ```
 
-#####3. Solve polynomial problems
-You can easily analyze your math functions with **[Chaow.Numeric 2]**.
+---
+####3. Solve polynomial problems
+You can easily analyze your math functions with `Chaow.Numeric2`.
 
 ie. Solve integer of X, Y in {"3XX + 14XY + 6YY - 17X - 23Y - 505 = 0"}
 ```
@@ -49,8 +51,9 @@ Console.WriteLine(formula.Rewrite());
 //Output is x => x.Power(3)
 ```
 
+---
 ####4. Solve nonpolynomial problems
-**[Chaow.Combinatorics]** will allow you to backtrack with any types of problem.
+`Chaow.Combinatorics` will allow you to backtrack with any types of problem.
 
 ie. Solve 8 Queens easily, with few lines of code.
 ```
