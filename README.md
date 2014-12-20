@@ -111,15 +111,15 @@ var answer = solutions.First();
 
 # Modules
 
-| module | description |
-|-|-|
-| Chaow.Algorithms | provides data type to solve specific problems ie. binary indexed tree disjoint set, hungarian algorithm |
-| Chaow.Combinatorics | enables you to do combinatoric search easier ie. combination, permutation, partition |
-| Chaow.Expression | enhances the power of expression ie. exp matcher, exp replacer, exp rewriter |
-| Chaow.Extensions | extends .NET framework types ie. int, string, ienumerable, func |
-| Chaow.LINCON | language integrated constraint programming, allows you to write cp with linq |
-| Chaow.Numeric | provides various high performance numeric types ie. prime, biginteger, rational |
-| Chaow.Numeric 2 | allows you to do mathematical analysis ie. diophantine solver, polynomial rewriter |
+| module              | description                                                                                             |
+|---------------------|---------------------------------------------------------------------------------------------------------|
+| Chaow.Algorithms    | provides data type to solve specific problems ie. binary indexed tree disjoint set, hungarian algorithm |
+| Chaow.Combinatorics | enables you to do combinatoric search easier ie. combination, permutation, partition                    |
+| Chaow.Expression    | enhances the power of expression ie. exp matcher, exp replacer, exp rewriter                            |
+| Chaow.Extensions    | extends .NET framework types ie. int, string, ienumerable, func                                         |
+| Chaow.LINCON        | language integrated constraint programming, allows you to write cp with linq                            |
+| Chaow.Numeric       | provides various high performance numeric types ie. prime, biginteger, rational                         |
+| Chaow.Numeric 2     | allows you to do mathematical analysis ie. diophantine solver, polynomial rewriter                      |
 
 # Links
 - [My blog](http://chaowman.bloggang.com) (Thai language)
